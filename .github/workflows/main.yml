@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - master
-
 jobs:
   build:
     uses: contactekansh/github-workflows-template/.github/workflows/test.yml@main
