@@ -31,6 +31,6 @@ jobs:
         distribution: 'zulu' 
       
     - name: Build with Maven
-      run: mvn deploy -e -Dmaven.test.skip=true
-      env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN_SELF }}
+      run: mvn package -e -Dmaven.test.skip=true
+      # env:
+      #     GITHUB_TOKEN: ${{ secrets.TOKEN_SELF }}
