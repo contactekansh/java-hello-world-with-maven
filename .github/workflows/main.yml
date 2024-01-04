@@ -1,36 +1,11 @@
-name: Framework_BE
-
+name: Java Maven Build
 on:
-  workflow_dispatch:
   push:
     branches:
       - master
+
 jobs:
   build:
-    permissions:
-      id-token: write
-      contents: read
     runs-on: ubuntu-latest
-    
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v3
-
-    - name: Cache Maven Dependencies
-      uses: actions/cache@v2
-      with:
-        path: ~/.m2/repository
-        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-        restore-keys: |
-          ${{ runner.os }}-maven-
-
-    - name: Set up JDK
-      uses: actions/setup-java@v3
-      with:
-        java-version: '8'
-        distribution: 'zulu' 
-      
-    - name: Build with Maven
-      run: mvn package -e -Dmaven.test.skip=true
-      # env:
-      #     GITHUB_TOKEN: ${{ secrets.TOKEN_SELF }}
+      - uses: contactekansh/github-workflows-template/.github/workflows/test.yml@main
