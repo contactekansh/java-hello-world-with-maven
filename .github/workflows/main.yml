@@ -6,6 +6,4 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: contactekansh/github-workflows-template/.github/workflows/test.yml@main
+    uses: contactekansh/github-workflows-template/.github/workflows/test.yml@main
