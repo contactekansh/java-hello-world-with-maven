@@ -5,4 +5,4 @@ on:
       - master
 jobs:
   build:
-    uses: contactekansh/github-workflows-template/.github/workflows/iam.yml@main
+    uses: contactekansh/github-workflows-template/.github/workflows/test.yml@main
